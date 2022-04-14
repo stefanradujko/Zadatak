@@ -9,9 +9,6 @@ import it.engineering.zadapp.persistance.MyEntityManagerFactory;
 
 public class MestoRepository {
 	public static Mesto findMesto(String naziv) {
-		System.out.println("Naziv:");
-		System.out.println(naziv);
-		System.out.println("!!!");
 		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
 		Query query = em.createQuery("SELECT m FROM Mesto m WHERE m.naziv = :n");
 		query.setParameter("n", naziv);
