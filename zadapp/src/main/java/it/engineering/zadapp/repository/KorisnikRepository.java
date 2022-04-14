@@ -11,15 +11,16 @@ public class KorisnikRepository{
 	
 	public static boolean existsKorinsik(Korisnik k) {
 		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
-		 Query query = em.createQuery("SELECT k FROM Korisnik k WHERE k.username = :u AND k.password = :p");
-		 query.setParameter("u", k.getUsername());
-		 query.setParameter("p", k.getPassword());
-		 Korisnik existing = null;
-		 try{
+		Query query = em.createQuery("SELECT k FROM Korisnik k WHERE k.username = :u AND k.password = :p");
+		query.setParameter("u", k.getUsername());
+		query.setParameter("p", k.getPassword());
+		Korisnik existing = null;
+		try{
 			 existing = (Korisnik) query.getSingleResult();
 		 }catch(NoResultException e) {
 			 System.out.println("ERROR");
 		 }
-		 return existing != null;
+		em.close();
+		return existing != null;
 	}
 }

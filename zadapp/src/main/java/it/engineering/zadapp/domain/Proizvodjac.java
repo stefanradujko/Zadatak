@@ -8,7 +8,8 @@ import javax.persistence.JoinColumn;
 public class Proizvodjac {
 	@Id
 	private int pib;
-	private String maticniBroj;
+	
+	private String maticni_broj;
 	private String adresa;
 	@JoinColumn(name = "pttBroj")
 	private Mesto mesto;
@@ -19,7 +20,7 @@ public class Proizvodjac {
 	public Proizvodjac(int pib, String maticniBroj, String adresa, Mesto mesto) {
 		super();
 		this.pib = pib;
-		this.maticniBroj = maticniBroj;
+		this.maticni_broj = maticniBroj;
 		this.adresa = adresa;
 		this.mesto = mesto;
 	}
@@ -33,11 +34,11 @@ public class Proizvodjac {
 	}
 
 	public String getMaticniBroj() {
-		return maticniBroj;
+		return maticni_broj;
 	}
 
 	public void setMaticniBroj(String maticniBroj) {
-		this.maticniBroj = maticniBroj;
+		this.maticni_broj = maticniBroj;
 	}
 
 	public String getAdresa() {
@@ -58,7 +59,7 @@ public class Proizvodjac {
 
 	@Override
 	public String toString() {
-		return "Proizvodjac [pib=" + pib + ", maticniBroj=" + maticniBroj + ", adresa=" + adresa + ", mesto=" + mesto
+		return "Proizvodjac [pib=" + pib + ", maticniBroj=" + maticni_broj + ", adresa=" + adresa + ", mesto=" + mesto
 				+ "]";
 	}
 	
