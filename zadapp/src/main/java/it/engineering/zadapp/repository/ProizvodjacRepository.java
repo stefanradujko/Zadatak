@@ -39,4 +39,9 @@ public class ProizvodjacRepository {
 		em.getTransaction().commit();
 		em.close();
 	}
+
+	public static void updateProizvodjac(Proizvodjac p) {
+		deleteProizvodjac(p.getPib());
+		addProizvodjac(p);
+	}
 }

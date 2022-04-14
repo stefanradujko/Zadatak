@@ -11,7 +11,7 @@
 <body>
 	<form action="/zadapp/app/dosomething">
 		<label>PIB:</label>
-		<input type="text" name="pib" value="${proizvodjac.pib}">
+		<input type="text" name="pib" value="${proizvodjac.pib}" readonly="readonly">
 		<br>
 		<label>Maticni broj:</label>
 		<input type="text" name="maticni" value="${proizvodjac.maticniBroj}">

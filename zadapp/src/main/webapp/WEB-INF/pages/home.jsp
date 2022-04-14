@@ -9,10 +9,8 @@
 <body>
 	<nav>
 		<a href="/zadapp/app/createpro">Dodaj proizvodjaca</a>
-		<a href="/app/viewallpro">Prikazi sve proizvodjace</a>
+		<a href="/zadapp/app/viewallpro">Prikazi sve proizvodjace</a>
 		<a href="/zadapp/app/findpro">Prikazi proizvodjaca</a>
-		<a href="/app/editpro">Izmeni proizvodjaca</a>
-		<a href="/app/editpro">Obrisi proizvodjaca</a>
 		<a href="/zadapp/app/logout">Log out</a>
 	</nav>
 	<h2>Dobro dosli!!!</h2>
