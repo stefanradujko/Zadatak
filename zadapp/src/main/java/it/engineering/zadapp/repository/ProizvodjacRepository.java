@@ -19,9 +19,6 @@ public class ProizvodjacRepository {
 	public static Proizvodjac findProizvodjac(String maticni) {
 		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
 		Query query = em.createQuery("SELECT p FROM Proizvodjac p WHERE p.maticni_broj = :m");
-		System.out.println("!");
-		System.out.println(maticni);
-		System.out.println("!!!");
 		query.setParameter("m", maticni);
 		Proizvodjac p = null;
 		try {
@@ -31,5 +28,15 @@ public class ProizvodjacRepository {
 		 }
 		em.close();
 		return p;
+	}
+	
+	public static void deleteProizvodjac(int pib) {
+		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
+		em.getTransaction().begin();
+		Query query = em.createQuery("DELETE FROM Proizvodjac p WHERE p.pib = :p");
+		query.setParameter("p", pib);
+		query.executeUpdate();
+		em.getTransaction().commit();
+		em.close();
 	}
 }

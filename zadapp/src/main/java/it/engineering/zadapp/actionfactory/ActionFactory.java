@@ -6,6 +6,7 @@ import it.engineering.zadapp.action.logout.LogoutAction;
 import it.engineering.zadapp.action.navigation.FetchCreatePro;
 import it.engineering.zadapp.action.navigation.FetchFindPro;
 import it.engineering.zadapp.action.proizvodjac.AddProAction;
+import it.engineering.zadapp.action.proizvodjac.UpdateDeleteProAction;
 import it.engineering.zadapp.action.proizvodjac.ViewProAction;
 import it.engineering.zadapp.constants.WebConstants;
 
@@ -30,6 +31,9 @@ public class ActionFactory {
 			break;
 		case WebConstants.PATH_LOGOUT:
 			action = new LogoutAction();
+			break;
+		case WebConstants.PATH_UP_DEL:
+			action = new UpdateDeleteProAction();
 			break;
 		default:
 			break;

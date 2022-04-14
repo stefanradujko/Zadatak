@@ -16,4 +16,5 @@ public interface WebConstants {
 	public static final String PATH_FIND_PRO = "/findpro";
 	public static final String PATH_VIEW_PRO = "/viewpro";
 	public static final String PATH_LOGOUT = "/logout";
+	public static final String PATH_UP_DEL = "/dosomething";
 }
