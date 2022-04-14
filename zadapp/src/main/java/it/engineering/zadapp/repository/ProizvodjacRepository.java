@@ -1,5 +1,8 @@
 package it.engineering.zadapp.repository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
@@ -43,5 +46,19 @@ public class ProizvodjacRepository {
 	public static void updateProizvodjac(Proizvodjac p) {
 		deleteProizvodjac(p.getPib());
 		addProizvodjac(p);
+	}
+
+	@SuppressWarnings("unchecked")
+	public static List<Proizvodjac> selectAll() {
+		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
+		Query query = em.createQuery("SELECT p FROM Proizvodjac p");
+		List<Proizvodjac> lista = null;
+		try {
+			lista = query.getResultList();
+		}catch(NoResultException e) {
+			 System.out.println("ERROR");
+		 }
+		em.close();
+		return lista;
 	}
 }

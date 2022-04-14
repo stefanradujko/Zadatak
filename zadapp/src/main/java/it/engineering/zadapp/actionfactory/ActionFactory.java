@@ -7,6 +7,7 @@ import it.engineering.zadapp.action.navigation.FetchCreatePro;
 import it.engineering.zadapp.action.navigation.FetchFindPro;
 import it.engineering.zadapp.action.proizvodjac.AddProAction;
 import it.engineering.zadapp.action.proizvodjac.UpdateDeleteProAction;
+import it.engineering.zadapp.action.proizvodjac.ViewAllProAction;
 import it.engineering.zadapp.action.proizvodjac.ViewProAction;
 import it.engineering.zadapp.constants.WebConstants;
 
@@ -34,6 +35,9 @@ public class ActionFactory {
 			break;
 		case WebConstants.PATH_UP_DEL:
 			action = new UpdateDeleteProAction();
+			break;
+		case WebConstants.PATH_VIEW_ALL:
+			action = new ViewAllProAction();
 			break;
 		default:
 			break;

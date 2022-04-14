@@ -9,7 +9,7 @@
 <body>
 	<nav>
 		<a href="/zadapp/app/createpro">Dodaj proizvodjaca</a>
-		<a href="/zadapp/app/viewallpro">Prikazi sve proizvodjace</a>
+		<a href="/zadapp/app/viewall">Prikazi sve proizvodjace</a>
 		<a href="/zadapp/app/findpro">Prikazi proizvodjaca</a>
 		<a href="/zadapp/app/logout">Log out</a>
 	</nav>
