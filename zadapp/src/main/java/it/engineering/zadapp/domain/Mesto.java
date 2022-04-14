@@ -1,6 +1,11 @@
 package it.engineering.zadapp.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Mesto {
+	@Id
 	private int pttBroj;
 	private String naziv;
 	

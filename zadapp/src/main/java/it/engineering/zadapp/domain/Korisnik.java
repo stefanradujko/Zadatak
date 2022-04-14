@@ -1,6 +1,11 @@
 package it.engineering.zadapp.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Korisnik {
+	@Id
 	private int id;
 	private String username;
 	private String password;

@@ -1,9 +1,16 @@
 package it.engineering.zadapp.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+
+@Entity
 public class Proizvodjac {
+	@Id
 	private int pib;
 	private String maticniBroj;
 	private String adresa;
+	@JoinColumn(name = "pttBroj")
 	private Mesto mesto;
 	
 	public Proizvodjac() {

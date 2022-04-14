@@ -103,7 +103,7 @@
 </head>
 <body>
     <div class="form-container">
-        <form action="#" method="post"> 
+        <form action="/zadapp/app/login" method="post"> 
             <h1>Login</h1>
             <input type="text" name="username" placeholder="Username...">
             <input type="password" name="password" placeholder="Password... ">
