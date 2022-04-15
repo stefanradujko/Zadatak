@@ -68,18 +68,25 @@
 		<thead>
 			<tr>
 				<th>PIB&ensp;&ensp;</th>
-				<th>Maticni&ensp;&ensp;</th>
+				<th>Maticni broj&ensp;&ensp;</th>
 				<th>Adresa&ensp;&ensp;</th>
 				<th>Mesto&ensp;&ensp;</th>
+				<th>Izmeni/Obrisi&ensp;&ensp;</th>
 			</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="pro" items="${lista}">
 					<tr>
 						<th>${pro.pib}&ensp;&ensp;&ensp;&ensp;&ensp;</th>
-						<th>${pro.maticniBroj}&ensp;&ensp;&ensp;</th>
-						<th>${pro.adresa}&ensp;&ensp;&ensp;</th>
-						<th>${pro.mesto.naziv}&ensp;&ensp;&ensp;</th>
+						<th>${pro.maticniBroj}&ensp;&ensp;&ensp;&ensp;</th>
+						<th>${pro.adresa}&ensp;&ensp;&ensp;&ensp;</th>
+						<th>${pro.mesto.naziv}&ensp;&ensp;&ensp;&ensp;</th>
+						<th>
+							<c:url var="urlView" value="/app/viewpro">
+								<c:param name="maticni" value="${pro.maticniBroj}" ></c:param>
+							</c:url>
+							<a href="${urlView}">Pogledaj</a>
+						</th>
 					</tr>
 				</c:forEach>
 			</tbody>
