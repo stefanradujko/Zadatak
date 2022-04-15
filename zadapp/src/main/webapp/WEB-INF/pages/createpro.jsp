@@ -52,6 +52,10 @@
             padding-left: 0.5rem;    
             font-size: 20px;
         }
+        select{
+        	background-color: rgba(116, 81, 183, 0.8);
+        	font-size: 25px;
+        }
 		
 		[type=submit]{
         border-color: transparent;
@@ -71,6 +75,7 @@
         [type=submit]:active{
             background-color: rgba(116, 81, 183, 0.8);
         }
+        
 </style>
 </head>
 <body>
@@ -86,7 +91,11 @@
 		<input type="text" name="adresa">
 		<br>
 		<label>Mesto:</label>
-		<input type="text" name="mesto">
+		<select name="mesto">
+			<c:forEach items="${lista}" var="m">
+				<option>${m.naziv}</option>
+			</c:forEach>
+		</select>
 		<br>
 		<input type="submit" value="Sacuvaj">
 	</form>

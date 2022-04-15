@@ -51,6 +51,10 @@
             padding-left: 0.5rem;    
             font-size: 20px;
         }
+        select{
+        	background-color: rgba(116, 81, 183, 0.8);
+        	font-size: 25px;
+        }
 		
 		[type=submit]{
         border-color: transparent;
@@ -82,7 +86,12 @@
 		<label>Adresa:</label>
 		<input type="text" name="adresa" value="${proizvodjac.adresa}">
 		<label>Mesto:</label>
-		<input type="text" name="mesto" value="${proizvodjac.mesto.naziv}">
+		<select name="mesto">
+			<option value="" selected disabled hidden>${proizvodjac.mesto.naziv}</option>
+			<c:forEach items="${lista}" var="m">	
+				<option>${m.naziv}</option>
+			</c:forEach>
+		</select>
 		<input type="submit" name="action" value="Izmeni">
 		<input type="submit" name="action" value="Izbrisi">
 	</form>
