@@ -68,7 +68,7 @@
 		<thead>
 			<tr>
 				<th>PIB&ensp;&ensp;</th>
-				<th>Naziv&ensp;&ensp;</th>
+				<th>Maticni&ensp;&ensp;</th>
 				<th>Adresa&ensp;&ensp;</th>
 				<th>Mesto&ensp;&ensp;</th>
 			</tr>

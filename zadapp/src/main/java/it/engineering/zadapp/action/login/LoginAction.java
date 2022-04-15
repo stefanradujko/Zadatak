@@ -33,6 +33,7 @@ public class LoginAction extends AbstractAction {
 				return WebConstants.PAGE_HOME;
 			}
 		}
+		request.setAttribute("message", "Unsuccessful login !");
 		return WebConstants.PAGE_INDEX;
 	}
 	

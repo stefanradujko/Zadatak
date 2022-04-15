@@ -52,6 +52,10 @@
             padding-left: 0.5rem;    
             font-size: 20px;
         }
+        
+        h2{
+        	font-size: 20px;
+        }
 		
 		[type=submit]{
         border-color: transparent;
@@ -76,10 +80,11 @@
 <body>
 	<jsp:include page="/WEB-INF/pages/menu.jsp" flush="true"/>
 	<form action="/zadapp/app/viewpro">
-		<label>Maticni broj:</label>
+		<label>Maticni broj :</label>
 		<input type="text" name="maticni">
 		<br>
 		<input type="submit" value="Pronadji">
+		<h2>${message}</h2>
 	</form>
 </body>
 </html>

@@ -21,8 +21,11 @@ public class AddProAction extends AbstractAction {
 		String naziv = request.getParameter("mesto");
 		Mesto m = MestoRepository.findMesto(naziv);
 		p.setMesto(m);
-		System.out.println(p.getMesto());
-		ProizvodjacRepository.addProizvodjac(p);
+		if(ProizvodjacRepository.addProizvodjac(p)) {
+			request.setAttribute("message", "Uspesno dodavanje proizvodjaca !");
+		} else{
+			request.setAttribute("message", "Neuspesno dodavanje proizvodjaca !");
+		}
 		return WebConstants.PAGE_HOME;
 	}
 

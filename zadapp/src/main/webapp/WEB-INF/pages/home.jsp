@@ -23,11 +23,17 @@
 		margin-top: 40vh;
 		color: white;
 	}
+	h1{
+		font-size: 40px;
+		text-align: center;
+		color: white;
+	}
 		
 </style>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/pages/menu.jsp" flush="true"/>
 	<h2>Dobro dosli ${korisnik.username}!!!</h2>
+	<h1>${message}</h1>
 </body>
 </html>

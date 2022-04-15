@@ -25,10 +25,12 @@ public class UpdateDeleteProAction extends AbstractAction {
 			Mesto m = MestoRepository.findMesto(naziv);
 			p.setMesto(m);
 			ProizvodjacRepository.updateProizvodjac(p);
+			request.setAttribute("message", "Uspesna izmena proizvodjaca !");
 			break;
 		case "Izbrisi":
 			int pib = Integer.parseInt(request.getParameter("pib"));
 			ProizvodjacRepository.deleteProizvodjac(pib);
+			request.setAttribute("message", "Uspesno brisanje proizvodjaca !");
 			break;
 		}
 		return WebConstants.PAGE_HOME;

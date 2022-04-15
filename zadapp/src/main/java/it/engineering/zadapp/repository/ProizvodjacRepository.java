@@ -1,6 +1,5 @@
 package it.engineering.zadapp.repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -11,12 +10,17 @@ import it.engineering.zadapp.domain.Proizvodjac;
 import it.engineering.zadapp.persistance.MyEntityManagerFactory;
 
 public class ProizvodjacRepository {
-	public static void addProizvodjac(Proizvodjac p) {
+	public static boolean addProizvodjac(Proizvodjac p) {
 		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
 		em.getTransaction().begin();
-		em.persist(p);
-		em.getTransaction().commit();
+		try {
+			em.persist(p);
+			em.getTransaction().commit();
+		}catch(Exception e){
+			return false;
+		}
 		em.close();
+		return true;
 	}
 	
 	public static Proizvodjac findProizvodjac(String maticni) {

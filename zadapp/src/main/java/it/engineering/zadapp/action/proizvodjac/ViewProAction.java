@@ -20,6 +20,7 @@ public class ViewProAction extends AbstractAction{
 		String maticni = request.getParameter("maticni");
 		Proizvodjac p = ProizvodjacRepository.findProizvodjac(maticni);
 		if(p == null) {
+			request.setAttribute("message", "Neuspesno pronalazenje proizvodjaca !");
 			return WebConstants.PAGE_FIND_PRO;
 		}
 		request.setAttribute("proizvodjac", p);
