@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page isELIgnored="false"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,22 +17,6 @@
 		margin: 0;
 		background-image: url("https://images4.alphacoders.com/936/thumb-1920-936378.jpg");
 	}
-	nav{
-            background-color: rgba(55, 28, 92, 0.8);
-            border: solid black 0.5px;
-            position: fixed;
-            top: 0;
-            width: 100vw;
-    }
-
-    nav > a{
-            text-decoration: none;
-			font-size: larger;
-            margin-left: 2rem;
-            padding-right: 1rem;
-            color: rgba(6, 159, 247, 0.8);
-    }
-
 	h2{
 		font-size: 100px;
 		text-align: center;
@@ -41,12 +27,7 @@
 </style>
 </head>
 <body>
-	<nav>
-		<a href="/zadapp/app/createpro">Dodaj proizvodjaca</a>
-		<a href="/zadapp/app/viewall">Prikazi sve proizvodjace</a>
-		<a href="/zadapp/app/findpro">Prikazi proizvodjaca</a>
-		<a href="/zadapp/app/logout">Log out</a>
-	</nav>
-	<h2>Dobro dosli!!!</h2>
+	<jsp:include page="/WEB-INF/pages/menu.jsp" flush="true"/>
+	<h2>Dobro dosli ${korisnik.username}!!!</h2>
 </body>
 </html>

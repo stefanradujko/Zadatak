@@ -5,6 +5,7 @@ import it.engineering.zadapp.action.login.LoginAction;
 import it.engineering.zadapp.action.logout.LogoutAction;
 import it.engineering.zadapp.action.navigation.FetchCreatePro;
 import it.engineering.zadapp.action.navigation.FetchFindPro;
+import it.engineering.zadapp.action.navigation.FetchHome;
 import it.engineering.zadapp.action.proizvodjac.AddProAction;
 import it.engineering.zadapp.action.proizvodjac.UpdateDeleteProAction;
 import it.engineering.zadapp.action.proizvodjac.ViewAllProAction;
@@ -38,6 +39,9 @@ public class ActionFactory {
 			break;
 		case WebConstants.PATH_VIEW_ALL:
 			action = new ViewAllProAction();
+			break;
+		case WebConstants.PATH_HOME:
+			action = new FetchHome();
 			break;
 		default:
 			break;

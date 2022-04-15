@@ -19,4 +19,5 @@ public interface WebConstants {
 	public static final String PATH_LOGOUT = "/logout";
 	public static final String PATH_UP_DEL = "/dosomething";
 	public static final String PATH_VIEW_ALL = "/viewall";
+	public static final String PATH_HOME = "/home";
 }

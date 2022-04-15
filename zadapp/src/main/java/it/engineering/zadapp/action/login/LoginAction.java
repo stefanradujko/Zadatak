@@ -18,14 +18,12 @@ public class LoginAction extends AbstractAction {
 		Korisnik k = new Korisnik();
 		k.setUsername(request.getParameter("username"));
 		k.setPassword(request.getParameter("password"));
-		System.out.println("!!!");
-		System.out.println(k);
-		System.out.println("!!!");
 		if(!KorisnikStorage.getInstance().exists(k)) {
 			if(KorisnikRepository.existsKorinsik(k)) {
 				KorisnikStorage.getInstance().add(k);
 				HttpSession session = request.getSession(true);
 				session.setAttribute("loggedUser", k);
+				request.setAttribute("korisnik", k);
 				return WebConstants.PAGE_HOME;
 			}
 		}

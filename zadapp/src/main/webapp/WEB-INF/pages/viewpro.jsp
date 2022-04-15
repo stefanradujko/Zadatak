@@ -73,6 +73,7 @@
 </style>
 </head>
 <body>
+	<jsp:include page="/WEB-INF/pages/menu.jsp" flush="true"/>
 	<form action="/zadapp/app/dosomething">
 		<label>PIB:</label>
 		<input type="text" name="pib" value="${proizvodjac.pib}" readonly="readonly">

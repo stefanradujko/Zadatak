@@ -62,6 +62,7 @@
 </style>
 </head>
 <body>
+	<jsp:include page="/WEB-INF/pages/menu.jsp" flush="true"/>
 	<h2>Svi proizvodjaci :</h2>
 	<table>
 		<thead>
