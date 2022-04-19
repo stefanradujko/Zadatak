@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <style>
 	nav{
-            background-color: rgba(55, 28, 92, 0.8);
+            background-color: rgba(15, 15, 15, 0.8);
             border: solid black 0.5px;
             position: fixed;
             top: 0;

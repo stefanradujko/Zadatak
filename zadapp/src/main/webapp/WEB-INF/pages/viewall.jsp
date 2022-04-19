@@ -8,15 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>View all</title>
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
-	*{
-        font-family: 'Satisfy', cursive;
-        color: white;
-    }
-	body{
-            margin: 0;
-            background-image: url("https://images4.alphacoders.com/936/thumb-1920-936378.jpg");
-    }
+	
 	.table-container{
             height: 100vh;
             display: flex;
@@ -27,7 +19,7 @@
         }
 
         table{
-            background-color: rgba(55, 28, 92, 0.8);
+            background-color: rgba(79, 84, 105, 0.8);
             border-color: transparent;
             height: 20rem;
             width: 50rem;
@@ -49,7 +41,7 @@
 		input{
             background: transparent;
             border: none;
-            border-bottom: 1px solid rgba(74, 69, 224, 0.8);
+            border-bottom: 1px solid rgba(162, 174, 224, 0.8);
             height: 1.7rem;
             padding-left: 0.5rem;    
             font-size: 20px;
@@ -57,11 +49,13 @@
 		h2{
 			margin-left: 42vw;
 			font-size: 60px;
+			color: rgba(79, 84, 105, 0.8)
 		}
 		
 </style>
 </head>
 <body>
+	<jsp:include page="/WEB-INF/pages/backandfont.jsp" flush="true"/>
 	<jsp:include page="/WEB-INF/pages/menu.jsp" flush="true"/>
 	<h2>Svi proizvodjaci :</h2>
 	<table>
@@ -69,9 +63,9 @@
 			<tr>
 				<th>PIB&ensp;&ensp;</th>
 				<th>Maticni broj&ensp;&ensp;</th>
-				<th>Adresa&ensp;&ensp;</th>
-				<th>Mesto&ensp;&ensp;</th>
-				<th>Izmeni/Obrisi&ensp;&ensp;</th>
+				<th>Adresa&ensp;&ensp;&ensp;&nbsp;</th>
+				<th>Mesto&ensp;&ensp;&nbsp;</th>
+				<th>Izmeni/Obrisi</th>
 			</tr>
 			</thead>
 			<tbody>
