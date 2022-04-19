@@ -7,6 +7,7 @@ import it.engineering.zadapp.action.navigation.FetchCreatePro;
 import it.engineering.zadapp.action.navigation.FetchFindPro;
 import it.engineering.zadapp.action.navigation.FetchHome;
 import it.engineering.zadapp.action.proizvodjac.AddProAction;
+import it.engineering.zadapp.action.proizvodjac.ConfirmDeleteAction;
 import it.engineering.zadapp.action.proizvodjac.UpdateDeleteProAction;
 import it.engineering.zadapp.action.proizvodjac.ViewAllProAction;
 import it.engineering.zadapp.action.proizvodjac.ViewProAction;
@@ -42,6 +43,9 @@ public class ActionFactory {
 			break;
 		case WebConstants.PATH_HOME:
 			action = new FetchHome();
+			break;
+		case WebConstants.PATH_CONFIRMATION:
+			action = new ConfirmDeleteAction();
 			break;
 		default:
 			break;

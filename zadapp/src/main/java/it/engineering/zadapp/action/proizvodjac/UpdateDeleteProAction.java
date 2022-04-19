@@ -29,9 +29,9 @@ public class UpdateDeleteProAction extends AbstractAction {
 			break;
 		case "Izbrisi":
 			int pib = Integer.parseInt(request.getParameter("pib"));
-			ProizvodjacRepository.deleteProizvodjac(pib);
-			request.setAttribute("message", "Uspesno brisanje proizvodjaca !");
-			break;
+			request.setAttribute("pib", pib);
+			request.setAttribute("conf_message", "Da li ste sigurni da zelite da obrisete proizvodjaca?");
+			return WebConstants.PAGE_CONFIRM;
 		}
 		return WebConstants.PAGE_HOME;
 	}

@@ -8,6 +8,7 @@ public interface WebConstants {
 	public static final String PAGE_FIND_PRO = "/WEB-INF/pages/findpro.jsp";
 	public static final String PAGE_VIEW_PRO = "/WEB-INF/pages/viewpro.jsp";
 	public static final String PAGE_VIEW_ALL = "/WEB-INF/pages/viewall.jsp";
+	public static final String PAGE_CONFIRM = "/WEB-INF/pages/confirm.jsp";
 	
 	
 	//paths
@@ -20,4 +21,5 @@ public interface WebConstants {
 	public static final String PATH_UP_DEL = "/dosomething";
 	public static final String PATH_VIEW_ALL = "/viewall";
 	public static final String PATH_HOME = "/home";
+	public static final String PATH_CONFIRMATION = "/confirm";
 }
