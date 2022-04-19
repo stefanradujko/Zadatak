@@ -21,5 +21,6 @@ public interface WebConstants {
 	public static final String PATH_UP_DEL = "/dosomething";
 	public static final String PATH_VIEW_ALL = "/viewall";
 	public static final String PATH_HOME = "/home";
-	public static final String PATH_CONFIRMATION = "/confirm";
+	public static final String PATH_CONFIRM_DELETE = "/confirmdelete";
+	public static final String PATH_CONFIRM_UPDATE = "/confirmupdate";
 }

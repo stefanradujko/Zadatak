@@ -2,6 +2,7 @@ package it.engineering.zadapp.action.proizvodjac;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import it.engineering.zadapp.action.AbstractAction;
 import it.engineering.zadapp.constants.WebConstants;
@@ -24,16 +25,20 @@ public class UpdateDeleteProAction extends AbstractAction {
 			String naziv = request.getParameter("mesto");
 			Mesto m = MestoRepository.findMesto(naziv);
 			p.setMesto(m);
-			ProizvodjacRepository.updateProizvodjac(p);
-			request.setAttribute("message", "Uspesna izmena proizvodjaca !");
+			request.setAttribute("pib", p.getPib());
+			request.setAttribute("conf_message", "Da li ste sigurni da zelite da izmenite proizvodjaca?");
+			request.setAttribute("conf_path", "/zadapp/app/confirmupdate");
+			HttpSession session = request.getSession();
+			session.setAttribute("updatedPro", p);
 			break;
 		case "Izbrisi":
 			int pib = Integer.parseInt(request.getParameter("pib"));
 			request.setAttribute("pib", pib);
 			request.setAttribute("conf_message", "Da li ste sigurni da zelite da obrisete proizvodjaca?");
-			return WebConstants.PAGE_CONFIRM;
+			request.setAttribute("conf_path", "/zadapp/app/confirmdelete");
+			break;
 		}
-		return WebConstants.PAGE_HOME;
+		return WebConstants.PAGE_CONFIRM;
 	}
 
 }
