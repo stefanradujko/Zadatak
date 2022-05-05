@@ -1,0 +1,59 @@
+package it.engineering.zadapp.dto;
+
+public class ProizvodjacDto {
+	private int pib;
+	private String maticniBroj;
+	private String adresa;
+	private MestoDto mestoDto;
+	
+	public ProizvodjacDto() {
+	}
+
+	public ProizvodjacDto(int pib, String maticniBroj, String adresa, MestoDto mestoDto) {
+		super();
+		this.pib = pib;
+		this.maticniBroj = maticniBroj;
+		this.adresa = adresa;
+		this.mestoDto = mestoDto;
+	}
+
+	public int getPib() {
+		return pib;
+	}
+
+	public void setPib(int pib) {
+		this.pib = pib;
+	}
+
+	public String getMaticniBroj() {
+		return maticniBroj;
+	}
+
+	public void setMaticniBroj(String maticniBroj) {
+		this.maticniBroj = maticniBroj;
+	}
+
+	public String getAdresa() {
+		return adresa;
+	}
+
+	public void setAdresa(String adresa) {
+		this.adresa = adresa;
+	}
+
+	public MestoDto getMestoDto() {
+		return mestoDto;
+	}
+
+	public void setMestoDto(MestoDto mestoDto) {
+		this.mestoDto = mestoDto;
+	}
+
+	@Override
+	public String toString() {
+		return "ProizvodjacDto [pib=" + pib + ", maticniBroj=" + maticniBroj + ", adresa=" + adresa + ", mestoDto="
+				+ mestoDto + "]";
+	}
+
+	
+}

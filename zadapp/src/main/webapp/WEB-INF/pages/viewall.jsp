@@ -74,10 +74,12 @@
 						<th>${pro.pib}&ensp;&ensp;&ensp;&ensp;&ensp;</th>
 						<th>${pro.maticniBroj}&ensp;&ensp;&ensp;&ensp;</th>
 						<th>${pro.adresa}&ensp;&ensp;&ensp;&ensp;</th>
-						<th>${pro.mesto.naziv}&ensp;&ensp;&ensp;&ensp;</th>
+						<th>${pro.mestoDto.naziv}&ensp;&ensp;&ensp;&ensp;</th>
 						<th>
-							<c:url var="urlView" value="/app/viewpro">
-								<c:param name="maticni" value="${pro.maticniBroj}" ></c:param>
+							<c:url var="urlView" value="/viewpro">
+								<c:param name="pib" value="${pro.pib}" ></c:param>
+								<c:param name="maticniBroj" value="${pro.maticniBroj}" ></c:param>
+								<c:param name="adresa" value="${pro.adresa}" ></c:param>
 							</c:url>
 							<a href="${urlView}">Pogledaj</a>
 						</th>

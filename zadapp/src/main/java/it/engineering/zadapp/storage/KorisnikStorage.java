@@ -3,37 +3,33 @@ package it.engineering.zadapp.storage;
 import java.util.ArrayList;
 import java.util.List;
 
-import it.engineering.zadapp.domain.Korisnik;
+import org.springframework.stereotype.Component;
 
+import it.engineering.zadapp.dto.KorisnikDto;
 
+@Component
 public class KorisnikStorage {
-	private List<Korisnik> users;
-	private static KorisnikStorage instance;
+	private List<KorisnikDto> users;
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public KorisnikStorage() {
 		users = new ArrayList();
 	}
-	
-	public static KorisnikStorage getInstance() {
-		if (instance == null) instance = new KorisnikStorage();
-		return instance;
-	}
-	
-	public void add(Korisnik k) {
-		users.add(k);
+		
+	public void add(KorisnikDto korisnik) {
+		users.add(korisnik);
 	}
 		
-	public boolean exists(Korisnik k) {
-		for(Korisnik u : users) {
-			if(u.getUsername().equals(k.getUsername()) && u.getPassword().equals(k.getPassword())) {
+	public boolean exists(KorisnikDto k) {
+		for(KorisnikDto u : users) {
+			if(u.getUsername().equals(k.getUsername())) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-	public void remove(Korisnik k) {
+	public void remove(KorisnikDto k) {
 		users.remove(k);
 	}
 }

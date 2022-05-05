@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@page isELIgnored="false"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,24 +69,22 @@
 <body>
 	<jsp:include page="/WEB-INF/pages/backandfont.jsp" flush="true"/>
 	<jsp:include page="/WEB-INF/pages/menu.jsp" flush="true"/>
-	<form action="/zadapp/app/addpro">
+	<form:form action="addpro" modelAttribute="proizvodjacDto">
 		<label>PIB:</label>
-		<input type="text" name="pib">
+		<form:input type="text" path="pib"/>
 		<br>
 		<label>Maticni broj:</label>
-		<input type="text" name="maticni">
+		<form:input type="text" path="maticniBroj"/>
 		<br>
 		<label>Adresa:</label>
-		<input type="text" name="adresa">
+		<form:input type="text" path="adresa"/>
 		<br>
 		<label>Mesto:</label>
-		<select name="mesto">
-			<c:forEach items="${lista}" var="m">
-				<option>${m.naziv}</option>
-			</c:forEach>
-		</select>
+		<form:select path="mestoDto" multiple="false">
+			<form:options items="${lista}" itemvalue="pttBroj" itemLabel="Naziv"></form:options>
+		</form:select>
 		<br>
 		<input type="submit" value="Sacuvaj">
-	</form>
+	</form:form>
 </body>
 </html>

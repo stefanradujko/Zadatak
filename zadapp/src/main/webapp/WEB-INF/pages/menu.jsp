@@ -24,11 +24,10 @@
 </head>
 <body>
 	<nav>
-		<a href="/zadapp/app/home">Pocetna</a>
-		<a href="/zadapp/app/createpro">Dodaj proizvodjaca</a>
-		<a href="/zadapp/app/viewall">Prikazi sve proizvodjace</a>
-		<a href="/zadapp/app/findpro">Prikazi proizvodjaca</a>
-		<a href="/zadapp/app/logout">Log out</a>
+		<a href="/zadapp/home">Pocetna</a>
+		<a href="/zadapp/createpro">Dodaj proizvodjaca</a>
+		<a href="/zadapp/viewall">Prikazi sve proizvodjace</a>
+		<a href="/zadapp/logout">Log out</a>
 	</nav>
 </body>
 </html>

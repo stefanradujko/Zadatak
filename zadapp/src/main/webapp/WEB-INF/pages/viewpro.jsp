@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@page isELIgnored="false"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,22 +72,20 @@
 <body>
 	<jsp:include page="/WEB-INF/pages/backandfont.jsp" flush="true"/>
 	<jsp:include page="/WEB-INF/pages/menu.jsp" flush="true"/>
-	<form action="/zadapp/app/dosomething">
+	<form:form action="updtordel" modelAttribute="proizvodjacDto">
 		<label>PIB:</label>
-		<input type="text" name="pib" value="${proizvodjac.pib}" readonly="readonly">
+		<form:input type="text" path="pib" readonly = "readonly"/>
 		<label>Maticni broj:</label>
-		<input type="text" name="maticni" value="${proizvodjac.maticniBroj}">
+		<form:input type="text" path="maticniBroj"/>
 		<label>Adresa:</label>
-		<input type="text" name="adresa" value="${proizvodjac.adresa}">
+		<form:input type="text" path="adresa"/>
 		<label>Mesto:</label>
-		<select name="mesto">
-			<option value="" selected disabled hidden>${proizvodjac.mesto.naziv}</option>
-			<c:forEach items="${lista}" var="m">	
-				<option>${m.naziv}</option>
-			</c:forEach>
-		</select>
+		<form:select path="mestoDto" multiple="false">
+			<option value="" selected disabled hidden>Izaberite grad</option>
+			<form:options items="${lista}" itemvalue="pttBroj" itemLabel="Naziv"></form:options>
+		</form:select>
 		<input type="submit" name="action" value="Izmeni">
-		<input type="submit" name="action" value="Izbrisi">
-	</form>
+		<input type="submit" name="action" value="Obrisi">
+	</form:form>
 </body>
 </html>
