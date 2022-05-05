@@ -70,6 +70,7 @@
 	<jsp:include page="/WEB-INF/pages/backandfont.jsp" flush="true"/>
 	<jsp:include page="/WEB-INF/pages/menu.jsp" flush="true"/>
 	<form:form action="addpro" modelAttribute="proizvodjacDto">
+		<div>${information}</div>
 		<label>PIB:</label>
 		<form:input type="text" path="pib"/>
 		<br>

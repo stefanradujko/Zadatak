@@ -44,8 +44,9 @@ public class ProizvodjacServiceImpl implements ProizvodjacService {
 
 	@Override
 	public void deletePro(ProizvodjacDto p) {
-		Mesto m = new Mesto(p.getMestoDto().getPttBroj(), p.getMestoDto().getNaziv());
-		proizvodjacDao.deletePro(new Proizvodjac(p.getPib(), p.getMaticniBroj(), p.getAdresa(), m));
+		Proizvodjac pro = new Proizvodjac();
+		pro.setPib(p.getPib());
+		proizvodjacDao.deletePro(pro);
 		
 	}
 

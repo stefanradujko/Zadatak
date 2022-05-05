@@ -73,6 +73,7 @@
 	<jsp:include page="/WEB-INF/pages/backandfont.jsp" flush="true"/>
 	<jsp:include page="/WEB-INF/pages/menu.jsp" flush="true"/>
 	<form:form action="updtordel" modelAttribute="proizvodjacDto">
+		<div>${information}</div>
 		<label>PIB:</label>
 		<form:input type="text" path="pib" readonly = "readonly"/>
 		<label>Maticni broj:</label>
@@ -84,6 +85,10 @@
 			<option value="" selected disabled hidden>Izaberite grad</option>
 			<form:options items="${lista}" itemvalue="pttBroj" itemLabel="Naziv"></form:options>
 		</form:select>
+		<form:errors path="pib"/>
+    	<form:errors path="maticniBroj"/>
+    	<form:errors path="adresa"/>
+    	<form:errors path="mestoDto"/>
 		<input type="submit" name="action" value="Izmeni">
 		<input type="submit" name="action" value="Obrisi">
 	</form:form>

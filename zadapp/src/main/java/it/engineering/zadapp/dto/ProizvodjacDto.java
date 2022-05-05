@@ -1,9 +1,16 @@
 package it.engineering.zadapp.dto;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+
 public class ProizvodjacDto {
 	private int pib;
+	@NotEmpty
 	private String maticniBroj;
+	@NotEmpty
 	private String adresa;
+	@NotNull
 	private MestoDto mestoDto;
 	
 	public ProizvodjacDto() {

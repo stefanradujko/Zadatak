@@ -3,9 +3,13 @@ package it.engineering.zadapp.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.DataBinder;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,6 +29,8 @@ public class ProizvodjacController {
 	private ProizvodjacService proizvodjacService;
 	@Autowired
 	UserStatusChecker userStatusChecker;
+	@Autowired
+	private LocalValidatorFactoryBean validator;
 	
 	
 	@RequestMapping(path="/createpro", method = RequestMethod.GET)
@@ -39,9 +45,19 @@ public class ProizvodjacController {
 	}
 	
 	@RequestMapping(path="/addpro", method = RequestMethod.POST)
-	public String addPro(@ModelAttribute("proizvodjacDto") ProizvodjacDto proizvodjacDto, RedirectAttributes redirect, HttpServletRequest request) {
-		proizvodjacService.addPro(proizvodjacDto);
-		redirect.addFlashAttribute("message", "Uspesno sacuvan proizvodjac!");
+	public String addPro(@Valid@ModelAttribute("proizvodjacDto") ProizvodjacDto proizvodjacDto, BindingResult result, RedirectAttributes redirect, HttpServletRequest request) {
+		if(result.hasErrors()) {
+			redirect.addFlashAttribute("information", "Neuspesno cuvanje proizvodjaca!");
+			return "redirect:/createpro";
+		} else {
+			try{
+				proizvodjacService.addPro(proizvodjacDto);
+			}catch(Exception e) {
+				redirect.addFlashAttribute("information", "Neuspesno cuvanje proizvodjaca!");
+				return "redirect:/createpro";
+			}
+			redirect.addFlashAttribute("information", "Uspesno sacuvan proizvodjac!");
+		}
 		return "redirect:/home";
 	}
 	
@@ -69,8 +85,14 @@ public class ProizvodjacController {
 	}
 	
 	@RequestMapping(path="/updtordel", method = RequestMethod.POST)
-	public String updateOrDelete(@ModelAttribute("proizvodjacDto") ProizvodjacDto proizvodjacDto, RedirectAttributes redirect, HttpServletRequest request) {
+	public String updateOrDelete(@Valid@ModelAttribute("proizvodjacDto")ProizvodjacDto proizvodjacDto, BindingResult result, RedirectAttributes redirect, HttpServletRequest request) {
 		String action = request.getParameter("action");
+		if(result.hasErrors() && action.equals("Izmeni")) {
+			redirect.addFlashAttribute("information", "Sva polja su obavezna!");
+			redirect.addFlashAttribute("proizvodjacDto", proizvodjacDto);
+			return "redirect:/viewpro";
+		}
+		
 		redirect.addFlashAttribute("proizvodjacDto", proizvodjacDto);
 		
 		String fragment = "";
@@ -121,5 +143,11 @@ public class ProizvodjacController {
 			redirect.addFlashAttribute("message", "Uspesno brisanje proizvodjaca!");
 		}
 		return "redirect:/home";
+	}
+	
+	public void initBinder(DataBinder dataBinder) {
+		if(dataBinder.getTarget() instanceof ProizvodjacDto) {
+			dataBinder.setValidator(validator);
+		}
 	}
 }
