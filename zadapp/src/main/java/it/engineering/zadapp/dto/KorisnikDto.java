@@ -1,6 +1,12 @@
 package it.engineering.zadapp.dto;
 
-public class KorisnikDto {
+import it.engineering.zadapp.genericobject.Dto;
+
+public class KorisnikDto implements Dto {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String username;
 	private String password;
 	

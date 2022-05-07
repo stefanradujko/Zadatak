@@ -1,6 +1,12 @@
 package it.engineering.zadapp.dto;
 
-public class MestoDto {
+import it.engineering.zadapp.genericobject.Dto;
+
+public class MestoDto implements Dto {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int pttBroj;
 	private String naziv;
 	

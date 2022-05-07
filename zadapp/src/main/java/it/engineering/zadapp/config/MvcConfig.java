@@ -29,7 +29,8 @@ import it.engineering.zadapp.formatter.MestoFormatter;
 		"it.engineering.zadapp.service",
 		"it.engineering.zadapp.storage",
 		"it.engineering.zadapp.formatter",
-		"it.engineering.zadapp.status"
+		"it.engineering.zadapp.status",
+		"it.engineering.zadapp.converter"
 })
 @EnableWebMvc
 @EnableTransactionManagement

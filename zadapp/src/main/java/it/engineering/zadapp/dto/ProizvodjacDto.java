@@ -3,8 +3,14 @@ package it.engineering.zadapp.dto;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import it.engineering.zadapp.genericobject.Dto;
 
-public class ProizvodjacDto {
+
+public class ProizvodjacDto implements Dto {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int pib;
 	@NotEmpty
 	private String maticniBroj;

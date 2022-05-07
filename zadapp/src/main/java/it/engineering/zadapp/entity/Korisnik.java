@@ -4,7 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Korisnik {
+public class Korisnik implements it.engineering.zadapp.genericobject.Entity {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	private int id;
 	private String username;

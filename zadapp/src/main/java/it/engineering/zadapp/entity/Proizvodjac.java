@@ -7,7 +7,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Proizvodjac {
+public class Proizvodjac implements it.engineering.zadapp.genericobject.Entity {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	private int pib;
 	
